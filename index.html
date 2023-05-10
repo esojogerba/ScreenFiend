@@ -15,16 +15,22 @@
 <body>
   <div class="wrapper">
     <header>
-      <a href="/index.html"><img src="/images/Logo.svg" alt="Logo"></a>
-      <nav>
-        <ul role="list">
-          <li><a href="#">Movies</a></li>
-          <li><a href="#">TV Shows</a></li>
-          <li><a href="#">Backlog</a></li>
-          <li><a href="#">Sign Up</a></li>
-          <li><a href="#">Log In</a></li>
-        </ul>
-      </nav>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/index.html" aria-label="home">
+            <img src="/images/Logo.svg" alt="Logo">
+          </a>
+          <nav class="primary-navigation" id="primary-navigation">
+            <ul arial-label="Primary" role="list" class="nav-list">
+              <li><a href="#">Movies</a></li>
+              <li><a href="#">TV Shows</a></li>
+              <li><a href="#">Backlog</a></li>
+              <li><a href="#">Sign Up</a></li>
+              <li><a href="#">Log In</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </header>
   </div>
   <script type="module" src="/main.js"></script>
