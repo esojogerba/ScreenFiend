@@ -139,7 +139,23 @@ body {
 
 /* Navbar */
 
-li a {
+.primary-header {
+  padding-top: var(--size-700);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  font-size: var(--fs-nav);
+  display: flex;
+  gap: clamp(var(--size-400), 5vw, var(--size-700));
+}
+
+.nav-list a {
   text-decoration: none;
   color: var(--clr-neutral-900);
   font-size: var(--fs-600);
@@ -148,6 +164,15 @@ li a {
   text-transform: uppercase;
 }
 
+.nav-list a.right-nav-item {
+  color: var(--clr-primary-400);
+}
+
+#sign-up-nav {
+  border: 2px solid var(--clr-primary-400);
+  border-radius: 4px;
+  padding: 4px 10px;
+}
 
 
 
@@ -218,4 +243,14 @@ li a {
 
 .fs-600 {
   font-size: var(--fs-600);
+}
+
+/* Structure */
+
+.container {
+  --max-width: 1110px;
+  --container-padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--container-padding) * 2));
+  margin-inline: auto;
 }
