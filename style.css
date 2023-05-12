@@ -98,6 +98,7 @@ body {
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 /* A elements that don't have a class get default styles */
@@ -277,12 +278,29 @@ body {
 }
 
 .primary-heading {
+  font-size: var(--fs-primary-heading);
   line-height: 5rem;
+}
+
+@media (max-width: 72em) {
+  .primary-heading {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .hero-p {
+    font-size: 1.125rem;
+  }
 }
 
 @media (max-width: 56em) {
   .primary-heading {
+    color: var(--clr-neutral-100);
     line-height: 3rem;
+  }
+
+  .hero-p {
+    color: var(--clr-neutral-100);
   }
 }
 
@@ -290,6 +308,14 @@ body {
   width: 85%;
   display: grid;
   align-items: center;
+  margin-top: var(--size-500);
+}
+
+@media (max-width: 56em) {
+  .features {
+    max-width: 500px;
+    margin-top: 5rem;
+  }
 }
 
 .features__buttons {
@@ -301,14 +327,26 @@ body {
 
 .features__icon {
   padding: 1rem;
+  min-width: 35px;
   background-color: var(--clr-neutral-500);
   border-radius: 100px;
 }
 
 .features__icon-active {
+  min-width: 35px;
   padding: 1rem;
   background-color: var(--clr-primary-400);
   border-radius: 100px;
+}
+
+@media (max-width: 56em) {
+  .features__icon {
+    padding: 0.3rem;
+  }
+
+  .features__icon-active {
+    padding: 0.3rem;
+  }
 }
 
 .features__info {
@@ -331,12 +369,45 @@ body {
   padding: 3rem 4rem;
 }
 
+.hero__image {
+  align-self: center;
+}
+
+@media (max-width: 56em) {
+  .hero__image {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .image-bg-sm-screens {
+    background-image: url(/images/Theater.svg);
+    margin: 1rem 0;
+  }
+
+  .cta {
+    background-color: rgb(31 31 31 / 0.8);
+    padding: 2rem 0;
+  }
+
+  .features {
+    background-color: rgb(31 31 31 / 0.8);
+    padding: 2rem 1rem;
+  }
+}
 
 
 
 /*////////////// Utility classes //////////////*/
 
 /* Text */
+
 .text-primary-400 {
   color: var(--clr-primary-400)
 }
@@ -368,6 +439,7 @@ body {
 }
 
 /* Background */
+
 .bg-primary-400 {
   background-color: var(--clr-primary-400)
 }
@@ -381,6 +453,7 @@ body {
 }
 
 /* Font weights */
+
 .fw-bold {
   font-weight: var(--fw-bold);
 
@@ -454,7 +527,7 @@ body {
 /* Structure */
 
 .container {
-  --max-width: 1440px;
+  --max-width: 1240px;
   --container-padding: 1rem;
 
   width: min(var(--max-width), 100% - (var(--container-padding) * 2));
