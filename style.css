@@ -311,13 +311,6 @@ body {
   margin-top: var(--size-500);
 }
 
-@media (max-width: 56em) {
-  .features {
-    max-width: 500px;
-    margin-top: 5rem;
-  }
-}
-
 .features__buttons {
   display: flex;
   justify-content: space-between;
@@ -397,8 +390,18 @@ body {
   }
 
   .features {
+    width: 100%;
     background-color: rgb(31 31 31 / 0.8);
+    margin-top: 5rem;
     padding: 2rem 1rem;
+  }
+
+  .features__buttons {
+    max-width: 500px;
+  }
+
+  .features__info {
+    max-width: 500px;
   }
 }
 
