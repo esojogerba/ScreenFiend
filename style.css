@@ -2,10 +2,12 @@
 :root {
   /* Colors used in project */
 
+  --clr-primary-300: hsl(349, 83%, 55%);
   --clr-primary-400: hsl(349, 83%, 44%);
   --clr-primary-500: hsl(349, 100%, 27%);
 
   --clr-neutral-100: hsl(0, 0%, 96%);
+  --clr-neutral-500: hsl(0, 0%, 76%);
   --clr-neutral-900: hsl(0, 0%, 12%);
 
   /* Fonts used in project */
@@ -250,6 +252,11 @@ body {
 
 /* Hero section */
 
+.hero__left {
+  display: grid;
+  align-items: space-between;
+}
+
 .button {
   display: inline-flex;
   cursor: pointer;
@@ -264,11 +271,67 @@ body {
   background-color: var(--clr-primary-400);
 }
 
+.button:hover,
+.button:focus-visible {
+  background-color: var(--clr-primary-500);
+}
+
 .primary-heading {
   line-height: 5rem;
 }
 
-.hero-p {}
+@media (max-width: 56em) {
+  .primary-heading {
+    line-height: 3rem;
+  }
+}
+
+.features {
+  width: 85%;
+  display: grid;
+  align-items: center;
+}
+
+.features__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.features__icon {
+  padding: 1rem;
+  background-color: var(--clr-neutral-500);
+  border-radius: 100px;
+}
+
+.features__icon-active {
+  padding: 1rem;
+  background-color: var(--clr-primary-400);
+  border-radius: 100px;
+}
+
+.features__info {
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-neutral-900);
+  border-radius: 4px;
+}
+
+.features__info-heading {
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  background-color: var(--clr-primary-400);
+  border-radius: 4px;
+  padding: 1rem 1rem;
+}
+
+.features__info-p {
+  padding: 3rem 4rem;
+}
+
+
 
 
 /*////////////// Utility classes //////////////*/
@@ -294,7 +357,7 @@ body {
   margin-inline: auto;
 }
 
-@media (max-width: 47em) {
+@media (max-width: 56em) {
   .text-center-sm-only {
     text-align: center;
   }
@@ -380,6 +443,13 @@ body {
   margin-block-start: var(--size-500);
 }
 
+.margin-top-700 {
+  margin-block-start: var(--size-700);
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
 
 /* Structure */
 
@@ -396,11 +466,25 @@ body {
   gap: 1rem;
 }
 
-@media (min-width: 47em) {
+@media (min-width: 56em) {
   .even-columns {
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
   }
+}
+
+.align-center {
+  align-items: center;
+}
+
+
+@media (max-width: 56em) {
+  .div-center-sm-only {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
 
 /* Hidden */
