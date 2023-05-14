@@ -332,16 +332,6 @@ body {
   border-radius: 100px;
 }
 
-@media (max-width: 56em) {
-  .features__icon {
-    padding: 0.3rem;
-  }
-
-  .features__icon-active {
-    padding: 0.3rem;
-  }
-}
-
 .features__info {
   color: var(--clr-neutral-100);
   background-color: var(--clr-neutral-900);
@@ -360,6 +350,25 @@ body {
 
 .features__info-p {
   padding: 3rem 4rem;
+}
+
+@media (max-width: 56em) {
+  .features__icon {
+    padding: 0.3rem;
+  }
+
+  .features__icon-active {
+    padding: 0.3rem;
+  }
+
+  .features__info {
+    color: var(--clr-neutral-900);
+    background-color: var(--clr-neutral-500);
+  }
+
+  .features__info-heading {
+    color: var(--clr-neutral-100);
+  }
 }
 
 .hero__image {
