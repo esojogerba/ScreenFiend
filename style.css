@@ -4,7 +4,7 @@
 
   --clr-primary-300: hsl(349, 83%, 55%);
   --clr-primary-400: hsl(349, 83%, 44%);
-  --clr-primary-500: hsl(349, 100%, 27%);
+  --clr-primary-500: hsl(349, 83%, 37%);
 
   --clr-neutral-100: hsl(0, 0%, 96%);
   --clr-neutral-500: hsl(0, 0%, 76%);
@@ -308,6 +308,7 @@ body {
   width: 85%;
   display: grid;
   align-items: center;
+  align-content: end;
   margin-top: var(--size-500);
 }
 
@@ -320,16 +321,28 @@ body {
 
 .features__icon {
   padding: 1rem;
-  min-width: 35px;
   background-color: var(--clr-neutral-500);
   border-radius: 100px;
 }
 
-.features__icon-active {
+.features__icon-svg {
+  max-width: 100%;
   min-width: 35px;
+  aspect-ratio: 1;
+  fill: var(--clr-neutral-900);
+}
+
+.features__icon-active {
   padding: 1rem;
   background-color: var(--clr-primary-400);
   border-radius: 100px;
+}
+
+.features__icon-svg-active {
+  max-width: 100%;
+  min-width: 35px;
+  aspect-ratio: 1;
+  fill: var(--clr-neutral-100);
 }
 
 .features__info {
@@ -349,7 +362,7 @@ body {
 }
 
 .features__info-p {
-  padding: 3rem 4rem;
+  padding: 2.5rem 3.5rem;
 }
 
 @media (max-width: 56em) {
@@ -390,27 +403,35 @@ body {
 
   .image-bg-sm-screens {
     background-image: url(/images/Theater.svg);
+    background-position: center center;
     margin: 1rem 0;
   }
 
   .cta {
-    background-color: rgb(31 31 31 / 0.8);
+    background-color: rgb(31 31 31 / 0.65);
     padding: 2rem 0;
   }
 
   .features {
     width: 100%;
-    background-color: rgb(31 31 31 / 0.8);
+    background-color: rgb(31 31 31 / 0.65);
     margin-top: 5rem;
     padding: 2rem 1rem;
   }
 
   .features__buttons {
+    width: 100%;
     max-width: 500px;
   }
 
   .features__info {
     max-width: 500px;
+  }
+
+  .features__icon-svg {
+    max-width: 100%;
+    min-width: 35px;
+    aspect-ratio: 1;
   }
 }
 
