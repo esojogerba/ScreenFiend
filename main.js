@@ -16,6 +16,8 @@ const showsButton = document.getElementById("features__icon-shows");
 const foldersButton = document.getElementById("features__icon-folders");
 const storeButton = document.getElementById("features__icon-store");
 const watchButton = document.getElementById("features__icon-watch");
+const featuresHeading = document.querySelector(".features__info-heading");
+const featuresP = document.querySelector(".features__info-p");
 
 
 
@@ -38,6 +40,10 @@ moviesButton.addEventListener('click', () => {
         moviesButton.classList.add("features__icon-active");
         moviesSVG.classList.remove("features__icon-svg");
         moviesSVG.classList.add("features__icon-svg-active");
+
+        // Change the contents of the card
+        featuresHeading.innerHTML = "Movies";
+        featuresP.innerHTML = "Thousands of movies waiting to be stored in your collections for future viewing.";
     }
 })
 
@@ -60,6 +66,10 @@ showsButton.addEventListener('click', () => {
         showsButton.classList.add("features__icon-active");
         showsSVG.classList.remove("features__icon-svg");
         showsSVG.classList.add("features__icon-svg-active");
+
+        // Change the contents of the card
+        featuresHeading.innerHTML = "Shows";
+        featuresP.innerHTML = "Add every show you can think of, and more to your backlog.";
     }
 })
 
@@ -82,6 +92,10 @@ foldersButton.addEventListener('click', () => {
         foldersButton.classList.add("features__icon-active");
         foldersSVG.classList.remove("features__icon-svg");
         foldersSVG.classList.add("features__icon-svg-active");
+
+        // Change the contents of the card
+        featuresHeading.innerHTML = "Folders";
+        featuresP.innerHTML = "Create folders to keep your ever growing backlog organized.";
     }
 })
 
@@ -104,6 +118,10 @@ storeButton.addEventListener('click', () => {
         storeButton.classList.add("features__icon-active");
         storeSVG.classList.remove("features__icon-svg");
         storeSVG.classList.add("features__icon-svg-active");
+
+        // Change the contents of the card
+        featuresHeading.innerHTML = "Store";
+        featuresP.innerHTML = "We store your information so that you can access your backlog from anywhere.";
     }
 })
 
@@ -126,5 +144,9 @@ watchButton.addEventListener('click', () => {
         watchButton.classList.add("features__icon-active");
         watchSVG.classList.remove("features__icon-svg");
         watchSVG.classList.add("features__icon-svg-active");
+
+        // Change the contents of the card
+        featuresHeading.innerHTML = "Watch";
+        featuresP.innerHTML = "Watch all of the media you have been wanting to see as you power through your backlog.";
     }
 })
