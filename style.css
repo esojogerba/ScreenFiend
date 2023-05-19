@@ -218,6 +218,11 @@ body {
     text-align: center;
   }
 
+  .nav-list a.active-nav-item {
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-400);
+  }
+
   .nav-list a {
     text-decoration: none;
     color: var(--clr-neutral-900);
@@ -225,9 +230,9 @@ body {
 
   .nav-list a:hover,
   .nav-list a:focus {
+    font-weight: var(--fw-bold);
     color: var(--clr-primary-400);
   }
-
 
   .mobile-nav-toggle {
     display: block;
@@ -406,6 +411,7 @@ body {
     background-image: url(/images/Theater.svg);
     background-position: center center;
     margin: 1rem 0;
+    background-size: cover;
   }
 
   .cta {
@@ -542,16 +548,16 @@ body {
   margin-block-end: var(--size-700);
 }
 
-.margin-top-900 {
-  margin-block-start: var(--size-900);
-}
-
 .margin-top-500 {
   margin-block-start: var(--size-500);
 }
 
 .margin-top-700 {
   margin-block-start: var(--size-700);
+}
+
+.margin-top-900 {
+  margin-block-start: var(--size-900);
 }
 
 .mx-auto {

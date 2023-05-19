@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/Logo-small.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScreenFiend</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header class="primary-header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/index.html" aria-label="home">
+                    <img src="/images/Logo.svg" alt="Logo">
+                </a>
+                <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                    <span class="visually-hidden">Menu</span>
+                </button>
+                <nav class="primary-navigation" id="primary-navigation">
+                    <ul arial-label="Primary" role="list" class="nav-list">
+                        <li><a href="#">Movies</a></li>
+                        <li><a href="#">TV Shows</a></li>
+                        <li><a href="#">Backlog</a></li>
+                        <li><a href="/signup.html" class="active-nav-item" id="sign-up-nav">Sign Up</a>
+                        </li>
+                        <li><a href="#" class="active-nav-item">Log In</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="image-bg-sm-screens">
+        <section class="hero | padding-block-900 text-center-sm-only">
+            <div class="container">
+                <div class="even-columns">
+                    <div class="hero__left">
+                        <div class="cta">
+                            <h1 class="primary-heading | fw-bold">
+                                Sign Up
+                            </h1>
+                            <form action="" class="account-form | margin-top-900">
+                                <label for="uname">Username:</label><br>
+                                <input type="text" id="uname" name="uname"><br>
+                                <label for="pw">Password:</label><br>
+                                <input type="text" id="pw" name="pw"><br>
+                                <label for="confirm-pw">Confirm Password:</label><br>
+                                <input type="text" id="confirm-pw" name="confirm-pw">
+                            </form>
+                            <button class="button | margin-top-700">Let's Go</button>
+                        </div>
+                    </div>
+                    <div class="hero__image | div-center-sm-only">
+                        <img class="mx-auto" src="images/Theater.svg" alt="Theater">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
