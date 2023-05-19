@@ -10,6 +10,13 @@ navToggle.addEventListener('click', () => {
     primaryHeader.toggleAttribute("data-overlay");
 });
 
+const newAccountBtn = document.getElementById("new-account-btn");
+
+newAccountBtn.addEventListener('click', () => {
+    location.href = "/signup.html";
+})
+
+
 var activeFeaturesButton = document.querySelector(".features__icon-active");
 const moviesButton = document.getElementById("features__icon-movies");
 const showsButton = document.getElementById("features__icon-shows");
@@ -18,8 +25,6 @@ const storeButton = document.getElementById("features__icon-store");
 const watchButton = document.getElementById("features__icon-watch");
 const featuresHeading = document.querySelector(".features__info-heading");
 const featuresP = document.querySelector(".features__info-p");
-
-
 
 moviesButton.addEventListener('click', () => {
     // If clicked button is not currently active:
