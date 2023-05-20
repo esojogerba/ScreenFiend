@@ -45,13 +45,18 @@
                             Sign Up
                         </h1>
                         <form action="" class="sign-up-form | margin-top-900 div-center-sm-only">
-                            <label class="account-form-label" for="username">Username</label><br>
-                            <input class="account-form-input" type="text" id="username" name="username" required><br>
-                            <label class="account-form-label" for="pw">Password</label><br>
-                            <input class="account-form-input" type="password" id="pw" name="pw" required><br>
-                            <label class="account-form-label" for="confirm-pw">Confirm Password</label><br>
-                            <input class="account-form-input" type="password" id="confirm-pw" name="confirm-pw"
-                                required>
+                            <div class="input-group | margin-top-500">
+                                <input type="text" id="username" name="username" autocomplete="off" required>
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="input-group | margin-top-500">
+                                <input type="password" id="pw" name="pw" autocomplete="off" required>
+                                <label for="pw">Password</label>
+                            </div>
+                            <div class="input-group | margin-top-500">
+                                <input type="password" id="confirm-pw" name="confirm-pw" autocomplete="off" required>
+                                <label for="confirm-pw">Confirm Password</label>
+                            </div>
                         </form>
                         <button class="button | margin-top-900">Let's Go</button>
                     </div>

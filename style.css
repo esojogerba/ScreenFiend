@@ -8,6 +8,7 @@
 
   --clr-neutral-100: hsl(0, 0%, 96%);
   --clr-neutral-500: hsl(0, 0%, 76%);
+  --clr-neutral-700: hsl(0, 0%, 50%);
   --clr-neutral-900: hsl(0, 0%, 12%);
 
   /* Fonts used in project */
@@ -412,6 +413,7 @@ body {
     background-position: center center;
     margin: 1rem 0;
     background-size: cover;
+    z-index: -1;
   }
 
   .cta {
@@ -451,27 +453,47 @@ body {
 
 .sign-up-form {
   width: 80%;
-  display: grid;
+  display: flex;
   align-items: space-between;
+  flex-direction: column;
 }
 
 .input-group {
-  margin: 0;
-  padding: 0;
+  position: relative;
   width: 100%;
+  margin: 1rem 0;
 }
 
-.account-form-label {
+.input-group label {
+  position: absolute;
+  top: 40%;
+  left: 1rem;
   color: var(--clr-neutral-900);
+  padding: 0 5px;
+  pointer-events: none;
+  transition: .5s;
 }
 
-.account-form-input {
+.input-group input {
   height: 60px;
-  min-width: 250px;
+  width: 100%;
   background-color: var(--clr-neutral-100);
-  border: 3px solid var(--clr-neutral-500);
+  border: 2px solid var(--clr-neutral-700);
   border-radius: 4px;
-  padding-left: 1rem;
+  margin-top: 1rem;
+  padding: 0 10px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border: 3px solid black;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label {
+  top: 0;
+  background-color: var(--clr-neutral-100);
+  border-radius: 4px;
 }
 
 @media (max-width: 56em) {
@@ -480,8 +502,14 @@ body {
     padding: 1rem 1rem 2rem 1rem;
   }
 
-  .account-form-label {
-    color: var(--clr-neutral-100);
+  .input-group input:focus {
+    border: 3px solid var(--clr-neutral-700);
+  }
+
+  .input-group input:focus~label,
+  .input-group input:valid~label {
+    color: white;
+    background-color: var(--clr-neutral-700);
   }
 }
 
