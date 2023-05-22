@@ -456,6 +456,7 @@ body {
   display: flex;
   align-items: space-between;
   flex-direction: column;
+  margin-top: var(--size-800);
 }
 
 .input-group {
@@ -499,7 +500,11 @@ body {
 @media (max-width: 56em) {
   .account-form__left {
     background-color: rgb(31 31 31 / 0.65);
-    padding: 1rem 1rem 2rem 1rem;
+    padding: 2rem 1rem 2rem 1rem;
+  }
+
+  .sign-up-form {
+    margin-top: var(--size-600);
   }
 
   .input-group input:focus {
