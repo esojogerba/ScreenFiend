@@ -164,11 +164,34 @@ body {
   letter-spacing: 0.05em;
   font-weight: var(--fw-semi-bold);
   text-transform: uppercase;
+  position: relative;
 }
 
 .nav-list a:hover,
 .nav-list a:focus {
   color: var(--clr-primary-400);
+}
+
+.nav-list a.active-nav-item:not(#sign-up-nav):before {
+  position: absolute;
+  content: "";
+  width: 40%;
+  border-bottom: 2px solid var(--clr-primary-400);
+  bottom: -4px;
+}
+
+.nav-list a:not(#sign-up-nav):before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 1px;
+  border-bottom: 2px solid var(--clr-neutral-700);
+  bottom: -4px;
+  transition: width .3s;
+}
+
+.nav-list a:not(#sign-up-nav):hover:before {
+  width: 40%;
 }
 
 #sign-up-nav {
@@ -219,11 +242,6 @@ body {
     text-align: center;
   }
 
-  .nav-list a.active-nav-item {
-    font-weight: var(--fw-bold);
-    color: var(--clr-primary-400);
-  }
-
   .nav-list a {
     text-decoration: none;
     color: var(--clr-neutral-900);
@@ -231,7 +249,6 @@ body {
 
   .nav-list a:hover,
   .nav-list a:focus {
-    font-weight: var(--fw-bold);
     color: var(--clr-primary-400);
   }
 
