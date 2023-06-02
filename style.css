@@ -535,6 +535,33 @@ body {
   }
 }
 
+/* Movie List */
+
+.movie-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.movie-card {
+  box-shadow: 5px 5px 10px var(--clr-neutral-500);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.movie-poster {
+  border-radius: 4px;
+}
+
+.movie-title {
+  text-align: end;
+  font-weight: var(--fw-semi-bold);
+}
+
+.movie-year {
+  text-align: end;
+  font-weight: var(--fw-light);
+}
 
 
 /*////////////// Utility classes //////////////*/
