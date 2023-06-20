@@ -18,7 +18,7 @@
   --on-background: hsla(220, 100%, 95%, 1);
   --on-surface: hsla(250, 100%, 95%, 1);
   --on-surface-variant: hsla(250, 1%, 44%, 1);
-  --primary: hsla(349, 100%, 43%, 1);
+  --primary: hsl(349, 83%, 44%);
   --primary-variant: hsla(349, 69%, 51%, 1);
   --rating-color: hsla(44, 100%, 49%, 1);
   --surface: hsla(250, 13%, 11%, 1);
@@ -51,10 +51,10 @@
   --fs-900: 3.75rem;
 
   /* Font Size */
-  --fs-heading: 4rem;
+  --fs-heading: 3.5rem;
   --fs-title-lg: 2.6rem;
-  --fs-title: 2rem;
-  --fs-label: 1.4rem;
+  --fs-title: 1.5rem;
+  --fs-label: 1rem;
 
   /* Font sizes being changed in media queries */
   --fs-body: var(--fs-700);
@@ -829,7 +829,9 @@ body {
   margin-block: 8px 4px;
 }
 
-.movie-card .meta-list {}
+.movie-card .meta-list {
+  justify-content: space-between;
+}
 
 .movie-card .card-btn {
   position: absolute;
