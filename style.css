@@ -579,35 +579,6 @@ body {
   }
 }
 
-/* Movie List */
-
-.movie-row {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.movie-card {
-  box-shadow: 5px 5px 10px var(--clr-neutral-500);
-  border-radius: 4px;
-  padding: 0.5rem;
-}
-
-.movie-poster {
-  border-radius: 4px;
-}
-
-.movie-title {
-  text-align: end;
-  font-weight: var(--fw-semi-bold);
-}
-
-.movie-year {
-  text-align: end;
-  font-weight: var(--fw-light);
-}
-
-
 /*////////////// App //////////////*/
 
 /* REUSED STYLES */
@@ -834,6 +805,37 @@ body {
   box-shadow: var(--shadow-1);
 
 }
+
+/* Movie List */
+
+.movie-list {
+  padding-block-start: 32px;
+}
+
+.movie-card {
+  position: relative;
+  min-width: 200px;
+}
+
+.movie-card .card-banner {
+  width: 200px;
+}
+
+.movie-card .title {
+  width: 100;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-block: 8px 4px;
+}
+
+.movie-card .meta-list {}
+
+.movie-card .card-btn {
+  position: absolute;
+  inset: 0;
+}
+
 
 
 /*////////////// Utility classes //////////////*/
