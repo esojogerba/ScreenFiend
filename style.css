@@ -159,6 +159,17 @@ svg {
   display: block;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--banner-background);
+  border-radius: var(--radius-8);
+
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -310,6 +321,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    z-index: 999;
   }
 
   .mobile-nav-toggle[aria-expanded="true"] {
