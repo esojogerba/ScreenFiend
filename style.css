@@ -134,6 +134,10 @@ body {
   background-color: var(--clr-neutral-100);
 }
 
+.app-body {
+  background-color: var(--surface);
+}
+
 /* Set core body defaults */
 body {
   text-rendering: optimizeSpeed;
@@ -816,12 +820,17 @@ body {
 .header {
   position: relative;
   background-color: var(--background);
-  padding-block: 24px;
+  padding-block: 16px;
   padding-inline: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 8px;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .header .logo {
@@ -859,9 +868,8 @@ body {
 
 .search-box {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
+  max-width: 1240px;
   height: 100%;
   background-color: var(--background);
   padding: 24px 16px;
