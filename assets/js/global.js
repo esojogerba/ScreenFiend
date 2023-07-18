@@ -13,3 +13,8 @@ const searchTogglers = document.querySelectorAll("[search-toggler]");
 addEventOnElements(searchTogglers, "click", function () {
     searchBox.classList.toggle("active");
 });
+
+// Stores the movieId of the movie that was clicked in local storage for later use.
+const getMovieDetail = function (movieId) {
+    window.localStorage.setItem("movieId", String(movieId));
+}
