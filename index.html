@@ -1,129 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
+        <!-- Primary Meta Tags -->
+        <title>ScreenFiend</title>
+        <meta name="title" content="ScreenFiend" />
+        <meta
+            name="description"
+            content="ScreenFiend keeps track of your media backlogs."
+        />
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Icon -->
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="assets/images/Logo-small.svg"
+        />
 
-  <!-- Primary Meta Tags -->
-  <title>ScreenFiend</title>
-  <meta name="title" content="ScreenFiend">
-  <meta name="description" content="ScreenFiend keeps track of your media backlogs.">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
 
-  <!-- Icon -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/Logo-small.svg" />
+        <!-- CSS Link -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-  <!-- CSS Link -->
-  <link rel="stylesheet" href="assets/css/style.css">
-
-</head>
-
-<body>
-  <header class="primary-header">
-    <div class="container">
-      <div class="nav-wrapper">
-        <a href="/index.html" aria-label="home">
-          <img src="assets/images/Logo.svg" alt="Logo">
-        </a>
-        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-          <span class="visually-hidden">Menu</span>
-        </button>
-        <nav class="primary-navigation" id="primary-navigation">
-          <ul arial-label="Primary" role="list" class="nav-list">
-            <li><a href="/movies.html">Movies</a></li>
-            <li><a href="#">TV Shows</a></li>
-            <li><a href="/app-home.html">Backlog</a></li>
-            <li><a href="/signup.html" class="right-nav-item" id="sign-up-nav">Sign Up</a></li>
-            <li><a href="/login.html" class="right-nav-item">Log In</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <main class="image-bg-sm-screens">
-    <section class="hero | padding-block-900 text-center-sm-only">
-      <div class="container">
-        <div class="even-columns">
-          <div class="hero__left">
-            <div class="cta">
-              <h1 class="primary-heading | fw-bold">
-                Nothing to watch?
-                <br>
-                Not anymore.
-              </h1>
-              <p class="hero-p | margin-top-500">
-                Keep track of your media backlog so that
-                <br>
-                you always have something to scratch
-                <br>
-                your entertainment itch.
-              </p>
-              <button class="button | margin-top-700" id="new-account-btn">Create An Account</button>
+    <body>
+        <header class="primary-header">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="/index.html" aria-label="home">
+                        <img src="assets/images/Logo.svg" alt="Logo" />
+                    </a>
+                    <button
+                        class="mobile-nav-toggle"
+                        aria-controls="primary-navigation"
+                        aria-expanded="false"
+                    >
+                        <span class="visually-hidden">Menu</span>
+                    </button>
+                    <nav class="primary-navigation" id="primary-navigation">
+                        <ul arial-label="Primary" role="list" class="nav-list">
+                            <li><a href="/movies.html">Movies</a></li>
+                            <li><a href="#">TV Shows</a></li>
+                            <li><a href="/app-home.html">Backlog</a></li>
+                            <li>
+                                <a
+                                    href="/signup.html"
+                                    class="right-nav-item"
+                                    id="sign-up-nav"
+                                    >Sign Up</a
+                                >
+                            </li>
+                            <li>
+                                <a href="/login.html" class="right-nav-item"
+                                    >Log In</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
+        </header>
 
-            <div class="features | div-center-sm-only">
-              <ul class="features__buttons | div-center-sm-only margin-top-500" role="list">
+        <main class="image-bg-sm-screens">
+            <section class="hero | padding-block-900 text-center-sm-only">
+                <div class="container">
+                    <div class="even-columns">
+                        <div class="hero__left">
+                            <div class="cta">
+                                <h1 class="primary-heading | fw-bold">
+                                    Nothing to watch?
+                                    <br />
+                                    Not anymore.
+                                </h1>
+                                <p class="hero-p | margin-top-500">
+                                    Keep track of your media backlog so that
+                                    <br />
+                                    you always have something to scratch
+                                    <br />
+                                    your entertainment itch.
+                                </p>
+                                <button
+                                    class="button | margin-top-700"
+                                    id="new-account-btn"
+                                >
+                                    Create An Account
+                                </button>
+                            </div>
 
-                <li class="features__icon-active" id="features__icon-movies">
-                  <a aria-label="movies">
-                    <svg class="features__icon-svg-active" id="movies-svg">
-                      <use xlink:href="assets/images/features-icons.svg#movies" />
-                    </svg>
-                  </a>
-                </li>
-                <li class="features__icon" id="features__icon-shows">
-                  <a aria-label="shows">
-                    <svg class="features__icon-svg" id="shows-svg">
-                      <use xlink:href="assets/images/features-icons.svg#shows" />
-                    </svg>
-                  </a>
-                </li>
-                <li class="features__icon" id="features__icon-folders">
-                  <a aria-label="folders">
-                    <svg class="features__icon-svg" id="folders-svg">
-                      <use xlink:href="assets/images/features-icons.svg#folders" />
-                    </svg>
-                  </a>
-                </li>
-                <li class="features__icon" id="features__icon-store">
-                  <a aria-label="store">
-                    <svg class="features__icon-svg" id="store-svg">
-                      <use xlink:href="assets/images/features-icons.svg#store" />
-                    </svg>
-                  </a>
-                </li>
-                <li class="features__icon" id="features__icon-watch">
-                  <a aria-label="watch">
-                    <svg class="features__icon-svg" id="watch-svg">
-                      <use xlink:href="assets/images/features-icons.svg#watch" />
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <div class="features__info | div-center-sm-only margin-top-500">
-                <h3 class="features__info-heading">Movies</h3>
-                <p class="features__info-p">
-                  Thousands of movies waiting to be stored in your collections for future viewing.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="hero__image | div-center-sm-only">
-            <img class="mx-auto" src="assets/images/Theater.svg" alt="Theater">
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+                            <div class="features | div-center-sm-only">
+                                <ul
+                                    class="features__buttons | div-center-sm-only margin-top-500"
+                                    role="list"
+                                >
+                                    <li
+                                        class="features__icon-active"
+                                        id="features__icon-movies"
+                                    >
+                                        <a aria-label="movies">
+                                            <svg
+                                                class="features__icon-svg-active"
+                                                id="movies-svg"
+                                            >
+                                                <use
+                                                    xlink:href="assets/images/features-icons.svg#movies"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="features__icon"
+                                        id="features__icon-shows"
+                                    >
+                                        <a aria-label="shows">
+                                            <svg
+                                                class="features__icon-svg"
+                                                id="shows-svg"
+                                            >
+                                                <use
+                                                    xlink:href="assets/images/features-icons.svg#shows"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="features__icon"
+                                        id="features__icon-folders"
+                                    >
+                                        <a aria-label="folders">
+                                            <svg
+                                                class="features__icon-svg"
+                                                id="folders-svg"
+                                            >
+                                                <use
+                                                    xlink:href="assets/images/features-icons.svg#folders"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="features__icon"
+                                        id="features__icon-store"
+                                    >
+                                        <a aria-label="store">
+                                            <svg
+                                                class="features__icon-svg"
+                                                id="store-svg"
+                                            >
+                                                <use
+                                                    xlink:href="assets/images/features-icons.svg#store"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="features__icon"
+                                        id="features__icon-watch"
+                                    >
+                                        <a aria-label="watch">
+                                            <svg
+                                                class="features__icon-svg"
+                                                id="watch-svg"
+                                            >
+                                                <use
+                                                    xlink:href="assets/images/features-icons.svg#watch"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div
+                                    class="features__info | div-center-sm-only margin-top-500"
+                                >
+                                    <h3 class="features__info-heading">
+                                        Movies
+                                    </h3>
+                                    <p class="features__info-p">
+                                        Thousands of movies waiting to be stored
+                                        in your collections for future viewing.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero__image | div-center-sm-only">
+                            <img
+                                class="mx-auto"
+                                src="assets/images/Theater.svg"
+                                alt="Theater"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-  <script type="module" src="assets/js/main.js"></script>
-</body>
-
+        <script type="module" src="assets/js/main.js"></script>
+    </body>
 </html>

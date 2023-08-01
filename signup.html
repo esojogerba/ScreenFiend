@@ -1,85 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
+        <!-- Primary Meta Tags -->
+        <title>ScreenFiend</title>
+        <meta name="title" content="ScreenFiend" />
+        <meta
+            name="description"
+            content="ScreenFiend keeps track of your media backlogs."
+        />
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Icon -->
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="assets/images/Logo-small.svg"
+        />
 
-    <!-- Primary Meta Tags -->
-    <title>ScreenFiend</title>
-    <meta name="title" content="ScreenFiend">
-    <meta name="description" content="ScreenFiend keeps track of your media backlogs.">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Icon -->
-    <link rel="icon" type="image/svg+xml" href="assets/images/Logo-small.svg" />
+        <!-- CSS Link -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-    <!-- CSS Link -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-</head>
-
-<body>
-    <header class="primary-header">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="/index.html" aria-label="home">
-                    <img src="assets/images/Logo.svg" alt="Logo">
-                </a>
-                <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
-                    <span class="visually-hidden">Menu</span>
-                </button>
-                <nav class="primary-navigation" id="primary-navigation">
-                    <ul arial-label="Primary" role="list" class="nav-list">
-                        <li><a href="/movies.html">Movies</a></li>
-                        <li><a href="#">TV Shows</a></li>
-                        <li><a href="/app-home.html">Backlog</a></li>
-                        <li><a href="/signup.html" id="sign-up-nav">Sign Up</a>
-                        </li>
-                        <li><a href="/login.html">Log In</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <main class="image-bg-sm-screens">
-        <section class="account-form | padding-block-900 text-center-sm-only">
+    <body>
+        <header class="primary-header">
             <div class="container">
-                <div class="even-columns">
-                    <div class="account-form__left | div-center-sm-only">
-                        <h1 class="primary-heading | fw-bold">
-                            Sign Up
-                        </h1>
-                        <form action="" class="sign-up-form | div-center-sm-only">
-                            <div class="input-group | margin-top-500">
-                                <input type="text" id="username" name="username" autocomplete="off" required>
-                                <label for="username">Username</label>
-                            </div>
-                            <div class="input-group | margin-top-500">
-                                <input type="password" id="pw" name="pw" autocomplete="off" required>
-                                <label for="pw">Password</label>
-                            </div>
-                            <div class="input-group | margin-top-500">
-                                <input type="password" id="confirm-pw" name="confirm-pw" autocomplete="off" required>
-                                <label for="confirm-pw">Confirm Password</label>
-                            </div>
-                        </form>
-                        <button class="button | margin-top-900">Let's Go</button>
-                    </div>
-                    <div class="hero__image | div-center-sm-only">
-                        <img class="mx-auto" src="assets/images/Theater.svg" alt="Theater">
-                    </div>
+                <div class="nav-wrapper">
+                    <a href="/index.html" aria-label="home">
+                        <img src="assets/images/Logo.svg" alt="Logo" />
+                    </a>
+                    <button
+                        class="mobile-nav-toggle"
+                        aria-controls="primary-navigation"
+                        aria-expanded="false"
+                    >
+                        <span class="visually-hidden">Menu</span>
+                    </button>
+                    <nav class="primary-navigation" id="primary-navigation">
+                        <ul arial-label="Primary" role="list" class="nav-list">
+                            <li><a href="/movies.html">Movies</a></li>
+                            <li><a href="#">TV Shows</a></li>
+                            <li><a href="/app-home.html">Backlog</a></li>
+                            <li>
+                                <a href="/signup.html" id="sign-up-nav"
+                                    >Sign Up</a
+                                >
+                            </li>
+                            <li><a href="/login.html">Log In</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-        </section>
-    </main>
+        </header>
 
-</body>
-
+        <main class="image-bg-sm-screens">
+            <section
+                class="account-form | padding-block-900 text-center-sm-only"
+            >
+                <div class="container">
+                    <div class="even-columns">
+                        <div class="account-form__left | div-center-sm-only">
+                            <h1 class="primary-heading | fw-bold">Sign Up</h1>
+                            <form
+                                action=""
+                                class="sign-up-form | div-center-sm-only"
+                            >
+                                <div class="input-group | margin-top-500">
+                                    <input
+                                        type="text"
+                                        id="username"
+                                        name="username"
+                                        autocomplete="off"
+                                        required
+                                    />
+                                    <label for="username">Username</label>
+                                </div>
+                                <div class="input-group | margin-top-500">
+                                    <input
+                                        type="password"
+                                        id="pw"
+                                        name="pw"
+                                        autocomplete="off"
+                                        required
+                                    />
+                                    <label for="pw">Password</label>
+                                </div>
+                                <div class="input-group | margin-top-500">
+                                    <input
+                                        type="password"
+                                        id="confirm-pw"
+                                        name="confirm-pw"
+                                        autocomplete="off"
+                                        required
+                                    />
+                                    <label for="confirm-pw"
+                                        >Confirm Password</label
+                                    >
+                                </div>
+                            </form>
+                            <button class="button | margin-top-900">
+                                Let's Go
+                            </button>
+                        </div>
+                        <div class="hero__image | div-center-sm-only">
+                            <img
+                                class="mx-auto"
+                                src="assets/images/Theater.svg"
+                                alt="Theater"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
 </html>
