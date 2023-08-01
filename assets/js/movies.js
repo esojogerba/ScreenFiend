@@ -1,35 +1,31 @@
-'use strict';
+"use strict";
 
 // Imports
 import { api_key, imageBaseURL, fetchDataFromServer } from "./api.js";
 import { createMediaCard } from "./media-card.js";
 
-
 // Retrieves page-content <article> from index page.
 const pageContent = document.querySelector("[page-content]");
-
 
 // Home page movie list sections (Top Rated, Upcoming, Trending Movies).
 const homePageSections = [
     {
         title: "Upcoming Movies",
-        path: "/movie/upcoming"
+        path: "/movie/upcoming",
     },
     {
         title: "Trending This Week",
-        path: "/trending/movie/week"
+        path: "/trending/movie/week",
     },
     {
         title: "Top Rated Movies",
-        path: "/movie/top_rated"
-    }
-]
-
+        path: "/movie/top_rated",
+    },
+];
 
 // Fetch all genres. Example: [ { "id": "123", "name": "Action" } ]
 // Then change genre format to {123: "Action"}
 const genreList = {
-
     // Assign correct genre string to each genre_id provided. Example: [23 , 43] = "Action, Romance".
     asString(genreIdList) {
         // Will hold list of genre strings.
@@ -41,32 +37,29 @@ const genreList = {
             this[genreId] && newGenreList.push(this[genreId]);
         }
         return newGenreList.join(", ");
-    }
-
+    },
 };
 
-
 // Retrieves all genres from API.
-fetchDataFromServer(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`,
+fetchDataFromServer(
+    `https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`,
 
     function ({ genres }) {
-
         for (const { id, name } of genres) {
             genreList[id] = name;
         }
 
         // Retrieves popular movie data and passes it in JSON format to heroBanner().
-        fetchDataFromServer(`https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&page=1`,
-            heroBanner);
-
+        fetchDataFromServer(
+            `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&page=1`,
+            heroBanner
+        );
     }
 );
-
 
 // Builds the hero banner.
 // Uses data retrieved from fetchDataFromServer() as a parameter.
 const heroBanner = function ({ results: getMovieList }) {
-
     // Creates banner <section>.
     const banner = document.createElement("section");
     banner.classList.add("banner");
@@ -83,12 +76,11 @@ const heroBanner = function ({ results: getMovieList }) {
         </div>
     `;
 
-    // Holds index of the current item. 
+    // Holds index of the current item.
     let controlItemIndex = 0;
 
     // Iterates through each entry in getMovieList map.
     for (const [index, movie] of getMovieList.entries()) {
-
         // Stores data for current movie into movie.
         const {
             backdrop_path,
@@ -98,7 +90,7 @@ const heroBanner = function ({ results: getMovieList }) {
             overview,
             poster_path,
             vote_average,
-            id
+            id,
         } = movie;
 
         // Creates a new slider item <div>.
@@ -164,7 +156,6 @@ const heroBanner = function ({ results: getMovieList }) {
 
         // Appends new slider control item into ".control-inner"
         banner.querySelector(".control-inner").appendChild(controlItem);
-
     }
 
     // Adds banner into pageContent.
@@ -174,16 +165,16 @@ const heroBanner = function ({ results: getMovieList }) {
 
     // Fetch data for movie lists.
     for (const { title, path } of homePageSections) {
-        fetchDataFromServer(`https://api.themoviedb.org/3${path}?api_key=${api_key}&page=1`, createMovieList, title)
+        fetchDataFromServer(
+            `https://api.themoviedb.org/3${path}?api_key=${api_key}&page=1`,
+            createMovieList,
+            title
+        );
     }
-
-
-}
-
+};
 
 // Hero slider functionality.
 const addHeroSlide = function () {
-
     // Retrieves all slider items and slider controls.
     const sliderItems = document.querySelectorAll("[slider-item]");
     const sliderControls = document.querySelectorAll("[slider-control]");
@@ -199,31 +190,29 @@ const addHeroSlide = function () {
 
     // After a slider item is clicked it becomes the active one.
     const sliderStart = function () {
-
         // Removes the active class from the previously active slider item.
         lastSliderItem.classList.remove("active");
         lastSliderControl.classList.remove("active");
 
         // Adds the ".active" class to the slider item that was clicked.
         // this == slider-control
-        sliderItems[Number(this.getAttribute("slider-control"))].classList.add("active");
+        sliderItems[Number(this.getAttribute("slider-control"))].classList.add(
+            "active"
+        );
         this.classList.add("active");
 
         // Sets the selected slider item as the variable.
-        lastSliderItem = sliderItems[Number(this.getAttribute("slider-control"))];
+        lastSliderItem =
+            sliderItems[Number(this.getAttribute("slider-control"))];
         lastSliderControl = this;
-
-    }
+    };
 
     // When a slider item is clicked, runs sliderStart().
     addEventOnElements(sliderControls, "click", sliderStart);
-
-
-}
+};
 
 // Creates scrollable movie lists.
 const createMovieList = function ({ results: movieList }, title) {
-
     // Creates movie-list <section>
     const movieListElem = document.createElement("section");
     movieListElem.classList.add("movie-list");
@@ -258,5 +247,4 @@ const createMovieList = function ({ results: movieList }, title) {
 
     // Adds the movie-lists to the page.
     pageContent.appendChild(movieListElem);
-
-}
+};

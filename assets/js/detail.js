@@ -1,32 +1,27 @@
-'use strict';
+"use strict";
 
 // Imports
 import { api_key, imageBaseURL, fetchDataFromServer } from "./api.js";
 import { createMediaCard } from "./media-card.js";
-
 
 // Retrieves the saved movieId of the movie selected from local storage.
 const movieId = window.localStorage.getItem("movieId");
 // Retrieves the page's content.
 const pageContent = document.querySelector("[page-content]");
 
-
 // Returns the movie's genres separated by a ','.
 const getGenres = function (genreList) {
-
     const newGenreList = [];
 
     // Pushes the names of the movie's genres into newGenreList.
     for (const { name } of genreList) newGenreList.push(name);
 
     return newGenreList.join(", ");
-
-}
+};
 
 // Returns the movie's cast list separated by a ','.
 // Ten cast members is the max length of the list.
 const getCasts = function (castList) {
-
     const newCastList = [];
 
     // Pushes cast names into newCastList.
@@ -37,12 +32,10 @@ const getCasts = function (castList) {
     }
 
     return newCastList.join(", ");
-
-}
+};
 
 // Returns the movie's directors separated by a ','.
 const getDirectors = function (crewList) {
-
     //  Gets the directors from the crewList
     const directors = crewList.filter(({ job }) => job === "Director");
 
@@ -52,20 +45,21 @@ const getDirectors = function (crewList) {
     for (const { name } of directors) directorList.push(name);
 
     return directorList.join(", ");
-
-}
+};
 
 // Filter videos
 const filterVideos = function (videoList) {
     // Returns all of the teasers and trailers from videoList that are hosted on YouTube as an array.
-    return videoList.filter(({ type, site }) => (type === "Trailer" || type === "Teaser") && site === "YouTube");
-}
-
+    return videoList.filter(
+        ({ type, site }) =>
+            (type === "Trailer" || type === "Teaser") && site === "YouTube"
+    );
+};
 
 // Retrieves movie details using the provided movieId.
-fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}&append_to_response=casts,videos,images,releases`,
+fetchDataFromServer(
+    `https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}&append_to_response=casts,videos,images,releases`,
     function (movie) {
-
         // Stores data for current movie into movie.
         const {
             backdrop_path,
@@ -74,11 +68,13 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
             release_date,
             runtime,
             vote_average,
-            releases: { countries: [{ certification }] },
+            releases: {
+                countries: [{ certification }],
+            },
             genres,
             overview,
             casts: { cast, crew },
-            videos: { results: videos }
+            videos: { results: videos },
         } = movie;
 
         // Sets document title to movie title.
@@ -91,7 +87,9 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
         // Sets movie-detail <div> HTML.
         // Uses template literals to inject movie data retrieved from API into the HTML.
         movieDetail.innerHTML = `
-            <div class="backdrop-image" style="background-image: url('${imageBaseURL}${"w1280" || "original"}${backdrop_path || poster_path}');"></div>
+            <div class="backdrop-image" style="background-image: url('${imageBaseURL}${
+            "w1280" || "original"
+        }${backdrop_path || poster_path}');"></div>
 
             <figure class="poster-box movie-poster">
                 <img src="${imageBaseURL}w342${poster_path}" alt="${title}" class="img-cover">
@@ -182,7 +180,6 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
 
         // Creates videos section of the details page.
         for (const { key, name } of filterVideos(videos)) {
-
             // Creates video-card <div>.
             const videoCard = document.createElement("div");
             videoCard.classList.add("video-card");
@@ -198,20 +195,20 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
 
             // Adds the completed video card into slider-inner.
             movieDetail.querySelector(".slider-inner").appendChild(videoCard);
-
         }
 
         // Pushes the completed details section into the page.
         pageContent.appendChild(movieDetail);
 
         fetchDataFromServer(
-            `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${api_key}&page=1`, addSuggestedMovies);
-
-    });
+            `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${api_key}&page=1`,
+            addSuggestedMovies
+        );
+    }
+);
 
 // Creates scrollable movie lists.
 const addSuggestedMovies = function ({ results: movieList }, title) {
-
     // Creates movie-list <section>
     const movieListElem = document.createElement("section");
     movieListElem.classList.add("movie-list");
@@ -246,5 +243,4 @@ const addSuggestedMovies = function ({ results: movieList }, title) {
 
     // Adds the movie-lists to the page.
     pageContent.appendChild(movieListElem);
-
-}
+};

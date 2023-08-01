@@ -1,19 +1,12 @@
-'use strict';
+"use strict";
 
 // Imports
 import { imageBaseURL } from "./api.js";
 
 // Creates a movie card using a movie's data from the API.
 export function createMediaCard(movie) {
-
     // Stores data for current movie into movie.
-    const {
-        poster_path,
-        title,
-        vote_average,
-        release_date,
-        id
-    } = movie;
+    const { poster_path, title, vote_average, release_date, id } = movie;
 
     // Creates movie-card <div>.
     const card = document.createElement("div");
@@ -45,5 +38,4 @@ export function createMediaCard(movie) {
     `;
 
     return card;
-
 }
