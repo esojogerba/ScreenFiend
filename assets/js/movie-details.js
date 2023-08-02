@@ -2,7 +2,7 @@
 
 // Imports
 import { api_key, imageBaseURL, fetchDataFromServer } from "./api.js";
-import { createMediaCard } from "./media-card.js";
+import { createMovieCard } from "./movie-card.js";
 
 // Retrieves the saved movieId of the movie selected from local storage.
 const movieId = window.localStorage.getItem("movieId");
@@ -235,7 +235,7 @@ const addSuggestedMovies = function ({ results: movieList }, title) {
     // Creates a movie-card for each movie in movieList.
     for (const movie of movieList) {
         // Imported from movie_card.js.
-        const movieCard = createMediaCard(movie);
+        const movieCard = createMovieCard(movie);
 
         // Adds the newly created movie-card into the list.
         movieListElem.querySelector(".slider-inner").appendChild(movieCard);
