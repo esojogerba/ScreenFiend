@@ -337,7 +337,7 @@ body {
         padding: 0.5em;
         width: 1.65em;
         aspect-ratio: 1;
-        background-image: url(images/icon-hamburger.svg);
+        background-image: url(../images/icon-hamburger.svg);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -345,7 +345,7 @@ body {
     }
 
     .mobile-nav-toggle[aria-expanded="true"] {
-        background-image: url(images/icon-close.svg);
+        background-image: url(../images/icon-close.svg);
     }
 }
 
@@ -501,7 +501,7 @@ body {
     }
 
     .image-bg-sm-screens {
-        background-image: url(/images/Theater.svg);
+        background-image: url(../images/Theater.svg);
         background-position: center center;
         margin: 1rem 0;
         background-size: cover;
