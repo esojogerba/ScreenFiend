@@ -2,7 +2,7 @@
 
 // Imports
 import { api_key, imageBaseURL, fetchDataFromServer } from "./api.js";
-import { createMediaCard } from "./media-card.js";
+import { createMovieCard } from "./movie-card.js";
 
 // Retrieves page-content <article> from index page.
 const pageContent = document.querySelector("[page-content]");
@@ -127,7 +127,7 @@ const heroBanner = function ({ results: getMovieList }) {
                         ${overview}
                     </p>
 
-                    <a href="./detail.html" class="btn" onClick="getMovieDetail(${id})">
+                    <a href="./movie-details.html" class="btn" onClick="getMovieDetail(${id})">
                         <img src="./assets/images/play_circle.png" width="24" height="24" aria-hidden="true"
                             alt="play circle">
                         <span class="span">Watch Now</span>
@@ -239,7 +239,7 @@ const createMovieList = function ({ results: movieList }, title) {
     // Creates a movie-card for each movie in movieList.
     for (const movie of movieList) {
         // Imported from movie_card.js.
-        const movieCard = createMediaCard(movie);
+        const movieCard = createMovieCard(movie);
 
         // Adds the newly created movie-card into the list.
         movieListElem.querySelector(".slider-inner").appendChild(movieCard);
