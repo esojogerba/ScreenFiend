@@ -17,3 +17,8 @@ addEventOnElements(searchTogglers, "click", function () {
 const getMovieDetail = function (movieId) {
     window.localStorage.setItem("movieId", String(movieId));
 };
+
+// Stores the showId of the show that was clicked in local storage for later use.
+const getShowDetail = function (showId) {
+    window.localStorage.setItem("showId", String(showId));
+};
