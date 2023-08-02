@@ -4,7 +4,7 @@
 import { imageBaseURL } from "./api.js";
 
 // Creates a movie card using a movie's data from the API.
-export function createMediaCard(movie) {
+export function createMovieCard(movie) {
     // Stores data for current movie into movie.
     const { poster_path, title, vote_average, release_date, id } = movie;
 
@@ -34,7 +34,7 @@ export function createMediaCard(movie) {
                 </div>
             </div>
 
-            <a href="./detail.html" class="card-btn" title="${title}" onClick="getMovieDetail(${id})"></a>
+            <a href="./movie-details.html" class="card-btn" title="${title}" onClick="getMovieDetail(${id})"></a>
     `;
 
     return card;
