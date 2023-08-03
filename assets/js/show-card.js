@@ -34,7 +34,7 @@ export function createShowCard(movie) {
                 </div>
             </div>
 
-            <a href="./detail.html" class="card-btn" title="${name}" onClick="getMovieDetail(${id})"></a>
+            <a href="./show-details.html" class="card-btn" title="${name}" onClick="getShowDetail(${id})"></a>
     `;
 
     return card;
