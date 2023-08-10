@@ -1,8 +1,12 @@
 "use strict";
 
 // Imports
+import { sidebar } from "./sidebar.js";
 import { api_key, imageBaseURL, fetchDataFromServer } from "./api.js";
 import { createMovieCard } from "./movie-card.js";
+
+// Sidebar functionality.
+sidebar("movie");
 
 // Retrieves page-content <article> from index page.
 const pageContent = document.querySelector("[page-content]");
