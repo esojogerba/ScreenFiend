@@ -303,6 +303,7 @@ body {
     background-color: var(--clr-neutral-100);
     display: none;
     position: absolute;
+    padding: 0.5em;
     min-width: 160px;
     z-index: 1;
 }
@@ -382,6 +383,18 @@ body {
 
     .mobile-nav-toggle[aria-expanded="true"] {
         background-image: url(../images/icon-close.svg);
+    }
+
+    .dropdown-content {
+        position: relative;
+    }
+
+    .dropdown-content a {
+        text-align: center;
+    }
+
+    .dropdown:focus .dropdown-content {
+        display: block;
     }
 }
 
